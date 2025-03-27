@@ -26,3 +26,16 @@ export interface RegisterFormInputs {
   email: string
   password: string
 }
+
+export interface AdFormInputs {
+  name: string
+  category: string
+  photos: FileList
+  description: string
+  autoContinue: boolean
+  location: string
+  contactPerson: string
+  email: string
+  phone: string
+}
+
