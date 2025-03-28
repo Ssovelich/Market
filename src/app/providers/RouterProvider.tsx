@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import { AppRouter } from '@app/appRouter'
 import { MainLayout } from '@app/layouts/MainLayout'
 import { AuthPage } from '@pages/auth'
+import { CreatePage } from '@pages/add'
 
 export const RouterProvider: FC = () => (
   <BrowserRouter>
@@ -10,7 +11,7 @@ export const RouterProvider: FC = () => (
       <Routes>
         {/* without MainLayout */}
         <Route path="/auth" element={<AuthPage />} />
-
+        <Route path="/create" element={<CreatePage />} />
         {/* with MainLayout */}
         <Route
           path="/*"

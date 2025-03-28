@@ -1,1 +1,1 @@
-export { AddPage as default } from './ui/Page'
+export { CreatePage } from './ui/Page'

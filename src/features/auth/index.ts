@@ -4,3 +4,5 @@ export { logout } from './api/authSlice'
 export { LoginForm } from './ui/LoginForm'
 export { RegisterForm } from './ui/RegisterForm'
 export { AuthButton } from './ui/AuthButton'
+
+export {CreateAdForm} from './ui/CreateAdForm'

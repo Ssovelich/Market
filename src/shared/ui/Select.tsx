@@ -10,6 +10,7 @@ type SelectProps<T extends FieldValues = FieldValues> = Partial<{
   error: string
   className: string
   validate: boolean
+  placeholder: string
 }>
 
 export const Select = <T extends FieldValues>({
@@ -20,23 +21,27 @@ export const Select = <T extends FieldValues>({
   error,
   className,
   validate = true,
+  placeholder = 'Choose an option',
 }: SelectProps<T>) => {
   return (
     <div className="relative flex flex-col">
       {label && <label htmlFor={name} className="mb-2 text-sm font-medium">{label}</label>}
       <select
         id={name}
+        defaultValue=""
         {...(validate && register && name ? register(name) : {})}
+        
         className={twMerge(
-          'h-11 w-full rounded-xl border px-4 py-2 text-sm focus:ring-2 focus:ring-indigo-600 focus:outline-none',
+          'h-11 w-full rounded-xl border px-4 py-2 text-sm focus:ring-2 focus:ring-gray-400 focus:outline-none',
           'transition-all duration-300 ease-in-out hover:shadow-[0px_4px_6px_2px_#0a1828]',
           error ? 'border-red-500' : 'border-gray-300',
+          'text-gray-500 invalid:text-gray-500',
           className
         )}
       >
-        <option value="" disabled selected>Choose an option</option>
+        <option value="" disabled >{placeholder}</option>
         {options.map((option) => (
-          <option key={option} value={option}>
+          <option key={option} value={option} className="text-black">
             {option}
           </option>
         ))}
